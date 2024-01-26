@@ -107,7 +107,7 @@
                                 <a href="">Syllabus</a>
                             </li>
                             <li>
-                                <a href="">Settings</a>
+                                <a href="../../Courses/Settings/Details/screen.html">Settings</a>
                             </li>
                         </ul>
                     </td>
@@ -122,74 +122,80 @@
                 </select><br/>
                 <hr/>
 
-                <h4>Assignment Name</h4>
-                <input id="assignment-name-input" type="text" value="A1 - ENV + HTML">
-                <br/>
-                <br/>
+                <form action="../../Assignments/screen.html">
+                    <h4>Assignment Name</h4>
+                    <input id="assignment-name-input" type="text" value="A1 - ENV + HTML">
+                    <br/>
+                    <br/>
 
-                <textarea cols="25" rows="2">This is the assignment description.</textarea>
-                <br/>
-                <br/>
+                    <textarea cols="25" rows="2">
+        This is the assignment description.
+    </textarea>
+                    <br/>
+                    <br/>
 
-                <label for="num-points-input">Points</label>
-                <br/>
-                <input id="num-points-input" type="number" value="100" max="100" min="0">
-                <br/>
-                <br/>
+                    <label for="num-points-input">Points</label>
+                    <br/>
+                    <input id="num-points-input" type="number" value="100" max="100" min="0">
+                    <br/>
+                    <br/>
 
-                <label for="assignment-type-input">Assignment Group</label>
-                <br/>
-                <select id="assignment-type-input">
-                    <option selected>
-                        ASSIGNMENTS
-                    </option>
-                </select>
-                <br/>
-                <br/>
+                    <label for="assignment-type-input">Assignment Group</label>
+                    <br/>
+                    <select id="assignment-type-input">
+                        <option selected>
+                            ASSIGNMENTS
+                        </option>
+                    </select>
+                    <br/>
+                    <br/>
 
-                <label for="grade-display-input">Display Grade As</label>
-                <br/>
-                <select id="grade-display-input">
-                    <option selected>
-                        Percentage
-                    </option>
-                </select>
-                <br/>
-                <br/>
+                    <label for="grade-display-input">Display Grade As</label>
+                    <br/>
+                    <select id="grade-display-input">
+                        <option selected>
+                            Percentage
+                        </option>
+                    </select>
+                    <br/>
+                    <br/>
 
-                <label for="submission-type-input">Submission Type</label>
-                <br/>
-                <select id="submission-type-input">
-                    <option>Online</option>
-                </select>
-                <br/>
-                <br/>
+                    <label for="submission-type-input">Submission Type</label>
+                    <br/>
+                    <select id="submission-type-input">
+                        <option>Online</option>
+                    </select>
+                    <br/>
+                    <br/>
 
-                <label>Assign</label>
-                <br/>
-                <label for="assigned-to-input">Assign To</label>
-                <br/>
-                <input id="assigned-to-input" type="text" value="Everyone">
-                <br/>
-                <br/>
+                    <label>Assign</label>
+                    <br/>
+                    <label for="assigned-to-input">Assign To</label>
+                    <br/>
+                    <input id="assigned-to-input" type="text" value="Everyone">
+                    <br/>
+                    <br/>
 
-                <label for="due-date-input">Due</label>
-                <br/>
-                <input id="due-date-input" type="date" value="current">
-                <br/>
-                <br/>
+                    <label for="due-date-input">Due</label>
+                    <br/>
+                    <input id="due-date-input" type="date" >
+                    <br/>
+                    <br/>
 
-                <label for="from-date-input">Available from</label>
-                <br/>
-                <input id="from-date-input" type="date" value="current">
-                <br/>
-                <br/>
+                    <label for="from-date-input">Available from</label>
+                    <br/>
+                    <input id="from-date-input" type="date" >
+                    <br/>
+                    <br/>
 
-                <label for="until-date-input">Until</label>
-                <br/>
-                <input id="until-date-input" type="date" value="current">
-                <br/>
-                <br/>
+                    <label for="until-date-input">Until</label>
+                    <br/>
+                    <input id="until-date-input" type="date" >
+                    <br/>
+                    <button type="submit">Cancel</button>
+                    <button type="submit">Save</button>
+                    <br/>
+                </form>
             </div>
         </td>
     </tr>
