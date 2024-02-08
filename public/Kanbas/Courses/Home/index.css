@@ -1,0 +1,60 @@
+.wd-modules,
+.wd-modules * {
+    border-radius: 0%;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.wd-modules {
+    margin: 5px;
+}
+
+.wd-modules > li {
+    background-color: lightgray;
+    border: 1px solid gray !important;
+    border-left: none !important;
+}
+
+.wd-modules > li > div {
+    padding: 6px;
+    border-left: 1px solid gray !important;
+}
+
+.wd-modules > li > ul > li {
+    padding: 5px;
+    border-top: 1px solid gray !important;
+    border-left: 2px solid green;
+}
+
+.wd-modules > li {
+    margin-bottom: 20px;
+}
+
+.wd-course-nav-content {
+    margin-left: 85px;
+    margin-top: 30px;
+    display: flex;
+}
+
+.wd-large-course-nav-content {
+    display: flex;
+}
+
+.wd-course-home-side-nav {
+    text-align: left;
+    width: 190px;
+    background: white;
+    padding-left: 20px;
+    overflow-wrap: break-word;
+}
+
+.wd-top-nav {
+    /*margin-left: 100px;*/
+    margin: 0;
+    padding: 10px;
+    height: 40px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
