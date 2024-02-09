@@ -4,99 +4,210 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/Kanbas/styles.css" />
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/libs/font-awesome/css/all.css" />
     <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
-    <link rel="stylesheet" href="/libs/font-awesome/css/all.css" />
-    <title>Grades Screen</title>
+    <link rel="stylesheet" href="/Kanbas/Courses/Home/index.css" />
+    <title>Home Screen</title>
 </head>
 <body>
-<table>
-    <div class="wd-flex-row-container" style="height: 100%">
-        <nav>
-            <ul class="wd-kanbas-navigation">
-                <li>
-                    <a href="http://northeastern.edu">
-                        <img src="/images/northeastern.png" class="wd-logo">
-                    </a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Account/Profile/screen.html">
-                        <i class="fa fa-user-circle" style="color: white"></i><br/> Account
-                    </a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Dashboard/screen.html">
-                        <i class="fa fa-tachometer"></i><br/> Dashboard
-                    </a>
-                </li>
-                <li class="wd-active">
-                    <a href="/Kanbas/Courses/Home/screen.html">
-                        <i class="fa fa-book"></i><br/> Courses
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-calendar"></i><br/> Calendar
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-inbox"></i><br/> Inbox
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-history"></i><br/> History
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-tablet-alt"></i><br/> Studio
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-creative-commons"></i><br/> Commons
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-question-circle"></i><br/> Help
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <nav>
-            <ul class="wd-side-navigation">
-                <li>
-                    <a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
-                <li class="wd-active">
-                    <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
-                </li>
-                <li>
-                    <a href="http://piazza.com">Piazza</a>
-                </li>
-                <li>
-                    <a href="#">Zoom</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
-                </li>
-                <li>
-                    <a href="#">Quizzes</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
-                </li>
-                <li>
-                    <a href="#">People</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="wd-flex-grow-1">
-
-        </div>
+<div class="wd-flex-row-container" style="height: 100%">
+    <div style="height: 100%">
+        <ul class="wd-kanbas-navigation float-start" style="height: 100%">
+            <li>
+                <a href="http://northeastern.edu">
+                    <img src="/images/northeastern.png" class="wd-logo">
+                </a>
+            </li>
+            <li>
+                <a href="/Kanbas/Account/Profile/screen.html">
+                    <i class="fa fa-user-circle" style="color: white"></i><br/> Account
+                </a>
+            </li>
+            <li>
+                <a href="/Kanbas/Dashboard/screen.html">
+                    <i class="fa fa-tachometer"></i><br/> Dashboard
+                </a>
+            </li>
+            <li class="wd-active">
+                <a href="/Kanbas/Courses/Home/screen.html">
+                    <i class="fa fa-book"></i><br/> Courses
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-calendar"></i><br/> Calendar
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-inbox"></i><br/> Inbox
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-history"></i><br/> History
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-tablet-alt"></i><br/> Studio
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-creative-commons"></i><br/> Commons
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-question-circle"></i><br/> Help
+                </a>
+            </li>
+        </ul>
     </div>
-</table>
+    <div class="wd-flex-grow-1">
+        <div class="wd-flex-row-container  wd-top-nav">
+            <i class="fa fa-bars fa-2x"></i>
+            <nav aria-label="breadcrumb" class="pt-1" style="margin-left: 8px; align-content: center">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">CS5610.36915.202430</a></li>
+                    <li class="breadcrumb-item"><a href="#">></a></li>
+                    <li class="breadcrumb-item">Grades</li>
+                </ol>
+            </nav>
+            <div class="wd-flex-grow-1">
+            </div>
+        </div>
+        <hr/>
+        <div class="wd-flex-row-container">
+            <div class="d-flex">
+                <ul class="wd-side-navigation">
+                    <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+                    <li><a href="#">Modules</a></li>
+                    <li><a href="#">Piazza</a></li>
+                    <li><a href="#">Zoom Meetings</a></li>
+                    <li>
+                        <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                    </li>
+                    <li><a href="#">Quizzes</a></li>
+                    <li class="wd-active">
+                        <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
+                    </li>
+                    <li><a href="/Kanbas/Courses/Settings/Details/screen.html">Settings</a></li>
+                </ul>
+            </div>
+            <div class="wd-flex-grow-1" style="margin-left: 30px; margin-right: 30px">
+                <div class="wd-flex-row-container">
+                    <div class="wd-flex-grow-1"></div>
+                    <div class="d-flex float-end main-content-control">
+                        <div class="flex-grow-1"></div>
+                        <button class="btn" style="background: #eeeeee; margin-right: 5px">
+                            <i class="fa fa-file-import" style="margin-right: 3px"></i>Import
+                        </button>
+                        <div class="dropdown">
+                            <button
+                                    class="btn dropdown-toggle"
+                                    type="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    style="background: #eeeeee; margin-right: 3px"
+                            >
+                                <i class="fa fa-file-export" style="margin-right: 3px"></i
+                                >Export
+
+                            </button>
+                        </div>
+                        <button class="btn" style="background: #eeeeee; height: 38px">
+                            <i class="fa-solid fa-gear"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label class="form-label">Student Names</label>
+                        <input
+                                placeholder="Search Students"
+                                type="text"
+                                class="form-control"
+                        />
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Assignment Names</label>
+                        <input
+                                placeholder="Search Assignments"
+                                type="text"
+                                class="form-control"
+                        />
+                    </div>
+                </div>
+                <br />
+                <button class="btn" style="background: #eeeeee">
+                    <i class="fa fa-filter" style="margin-right: 5px"></i>Apply Filters
+                </button>
+                <hr />
+
+                <!-- Table -->
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>A1 SETUP<br/>Out of 100</th>
+                            <th>A2 HTML<br/>Out of 100</th>
+                            <th>A3 CSS<br/>Out of 100</th>
+                            <th>A4 REACT<br/>Out of 100</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="color: #b52828">Nikhil</td>
+                            <td>99</td>
+                            <td>98</td>
+                            <td>97</td>
+                            <td><input style="width: 50px;" value="96" /></td>
+                        </tr>
+                        <tr>
+                            <td style="color: #b52828">Ravi</td>
+                            <td>123</td>
+                            <td><input style="width: 50px;" value="12" /></td>
+                            <td><input style="width: 50px;" value="34" /></td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #b52828">Sahith</td>
+                            <td>89</td>
+                            <td>90</td>
+                            <td><input style="width: 50px;" value="91" /></td>
+                            <td><input style="width: 50px;" value="45" /></td>
+                        </tr>
+                        <tr>
+                            <td style="color: #b52828">Srikar</td>
+                            <td>100</td>
+                            <td>120</td>
+                            <td>95</td>
+                            <td><input style="width: 50px;" value="91" /></td>
+                        </tr>
+                        <tr>
+                            <td style="color: #b52828">Boora</td>
+                            <td>90</td>
+                            <td>87</td>
+                            <td>91</td>
+                            <td>64</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #b52828">KK</td>
+                            <td>100</td>
+                            <td>94</td>
+                            <td>100</td>
+                            <td>112</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>        </div>
+    </div>
+</div>
 </body>
 </html>

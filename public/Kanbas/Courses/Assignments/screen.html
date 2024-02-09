@@ -4,215 +4,263 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/Kanbas/styles.css" />
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/libs/font-awesome/css/all.css" />
     <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
-    <link rel="stylesheet" href="/libs/font-awesome/css/all.css" />
-    <title>Grades Screen</title>
+    <link rel="stylesheet" href="/Kanbas/Courses/Home/index.css" />
+    <title>Home Screen</title>
 </head>
 <body>
-    <div class="wd-flex-row-container" style="height: 100%">
-        <div>
-            <!--Kanbas Navigation-->
-            <ul class="wd-kanbas-navigation">
-                <li>
-                    <a href="http://northeastern.edu">
-                        <img src="/images/northeastern.png" class="wd-logo">
-                    </a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Account/Profile/screen.html">
-                        <i class="fa fa-user-circle" style="color: white"></i><br/> Account
-                    </a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Dashboard/screen.html">
-                        <i class="fa fa-tachometer"></i><br/> Dashboard
-                    </a>
-                </li>
-                <li class="wd-active">
-                    <a href="/Kanbas/Courses/Home/screen.html">
-                        <i class="fa fa-book"></i><br/> Courses
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-calendar"></i><br/> Calendar
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-inbox"></i><br/> Inbox
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-history"></i><br/> History
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-tablet-alt"></i><br/> Studio
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-creative-commons"></i><br/> Commons
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-question-circle"></i><br/> Help
-                    </a>
-                </li>
-            </ul>
+<div class="wd-flex-row-container" style="height: 100%">
+    <div style="height: 100%">
+        <ul class="wd-kanbas-navigation float-start" style="height: 100%">
+            <li>
+                <a href="http://northeastern.edu">
+                    <img src="/images/northeastern.png" class="wd-logo">
+                </a>
+            </li>
+            <li>
+                <a href="/Kanbas/Account/Profile/screen.html">
+                    <i class="fa fa-user-circle" style="color: white"></i><br/> Account
+                </a>
+            </li>
+            <li>
+                <a href="/Kanbas/Dashboard/screen.html">
+                    <i class="fa fa-tachometer"></i><br/> Dashboard
+                </a>
+            </li>
+            <li class="wd-active">
+                <a href="/Kanbas/Courses/Home/screen.html">
+                    <i class="fa fa-book"></i><br/> Courses
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-calendar"></i><br/> Calendar
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-inbox"></i><br/> Inbox
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-history"></i><br/> History
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-tablet-alt"></i><br/> Studio
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-creative-commons"></i><br/> Commons
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-question-circle"></i><br/> Help
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="wd-flex-grow-1">
+        <div class="wd-flex-row-container wd-top-nav">
+            <i class="fa fa-bars fa-2x"></i>
+            <nav aria-label="breadcrumb" class="pt-1" style="margin-left: 8px; align-content: center">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">CS5610.36915.202430</a></li>
+                    <li class="breadcrumb-item"><a href="#">></a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Assignments</li>
+                </ol>
+            </nav>
+            <div class="wd-flex-grow-1">
+            </div>
+            <button class="btn btn-secondary float-end" style="height: 36px" >
+                <i class="fa-solid fa-glasses"></i> Student View
+            </button>
         </div>
-        <div>
-            <!--Course Navigation-->
-            <ul class="wd-side-navigation">
-                <li>
-                    <a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
-                <li class="wd-active">
-                    <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
-                </li>
-                <li>
-                    <a href="http://piazza.com">Piazza</a>
-                </li>
-                <li>
-                    <a href="#">Zoom</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
-                </li>
-                <li>
-                    <a href="#">Quizzes</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
-                </li>
-                <li>
-                    <a href="#">People</a>
-                </li>
-            </ul>
-        </div>
-        <div class="wd-flex-grow-1">
-            <!--Assignment Page Body-->
-            <input type="text" placeholder="Search for Assignments">
-            <button type="button">Group</button>
-            <button type="button">Assignment</button>
-            <select>
-                <option selected>Edit Assignment Dates</option>
-                <option>Edit Assignment Details</option>
-            </select><hr/>
+        <hr/>
+        <div class="wd-flex-row-container">
+            <div class="d-flex courseNav">
+                <ul class="wd-side-navigation">
+                    <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+                    <li><a href="#">Modules</a></li>
+                    <li><a href="#">Piazza</a></li>
+                    <li><a href="#">Zoom Meetings</a></li>
+                    <li class="wd-active">
+                        <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                    </li>
+                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                    <li><a href="/Kanbas/Courses/Settings/Details/screen.html">Settings</a></li>
+                </ul>
+            </div>
+            <div class="wd-flex-grow-1" style="margin-left: 30px; margin-right: 30px">
+                <div class="wd-flex-row-container">
+                    <div class="search wd-flex-grow-1">
+                        <input
+                                type="text"
+                                class="form-control w-25"
+                                placeholder="Search for Assignment"
+                        />
+                    </div>
+                    <div class="d-flex float-end main-content-control">
+                        <div class="flex-grow-1"></div>
+                        <button class="btn" style="background: #eeeeee">
+                            <i class="fa fa-plus"></i>Group
+                        </button>
+                        <button class="btn btn-danger">
+                            <i class="fa fa-plus"></i>Module
+                        </button>
+                        <button class="btn" style="background: #eeeeee; height: 38px">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                    </div>
+                </div>
 
-            <label><b>ASSIGNMENTS 40% of Total</b></label>
-            <select>
-                <option selected>Edit</option>
-                <option>Speed Grader</option>
-                <option>Duplicate</option>
-                <option>Delete</option>
-                <option>Move To..</option>
-                <option>Send To..</option>
-                <option>Copy To..</option>
-                <option>Share to Commons</option>
-            </select>
-            <ul>
-                <li>
-                    <a href="../Assignments/Edit/screen.html">A1 - ENV + HTML</a><br/>
-                    <a href="">Multiple Modules</a> | Not available yet
-                </li>
-                <li>
-                    <a href="../Assignments/Edit/screen.html">A2 - CSS + BOOTSTRAP</a><br/>
-                    <a href="">Multiple Modules</a> | Not available yet
-                </li>
-                <li>
-                    <a href="../Assignments/Edit/screen.html">A4 - STATE + REDUX</a><br/>
-                    <a href="">Multiple Modules</a> | Not available yet
-                </li>
-                <li>
-                    <a href="../Assignments/Edit/screen.html">A5 - NODE + SESSION</a><br/>
-                    <a href="">Multiple Modules</a> | Not available yet
-                </li>
-                <li>
-                    <a href="../Assignments/Edit/screen.html">A6 - MONGO + MONGOOSE</a><br/>
-                    <a href="">Multiple Modules</a> | Not available yet
-                </li>
-            </ul>
-
-            <label><b>QUIZZES 10% of Total</b></label>
-            <select>
-                <option selected>Edit</option>
-                <option>Speed Grader</option>
-                <option>Duplicate</option>
-                <option>Delete</option>
-                <option>Move To..</option>
-                <option>Send To..</option>
-                <option>Copy To..</option>
-                <option>Share to Commons</option>
-            </select>
-            <ul>
-                <li>
-                    <a href="">Q1 - HTML</a><br/>
-                    <a href="">Multiple Modules</a> | Not available yet
-                </li>
-                <li>
-                    <a href="">Q2 - CSS</a><br/>
-                    <a href="">Multiple Modules</a> | Not available yet
-                </li>
-                <li>
-                    <a href="">Q3 - JS.ES6</a><br/>
-                    <a href="">Multiple Modules</a> | Not available yet
-                </li>
-                <li>
-                    <a href="">Q4 - NODE</a><br/>
-                    <a href="">Multiple Modules</a> | Not available yet
-                </li>
-                <li>
-                    <a href="">Q5 - MONGO</a><br/>
-                    <a href="">Multiple Modules</a> | Not available yet
-                </li>
-            </ul>
-
-            <label><b>EXAMS 20% of Total</b></label>
-            <select>
-                <option selected>Edit</option>
-                <option>Speed Grader</option>
-                <option>Duplicate</option>
-                <option>Delete</option>
-                <option>Move To..</option>
-                <option>Send To..</option>
-                <option>Copy To..</option>
-                <option>Share to Commons</option>
-            </select>
-            <ul>
-                <li>
-                    <a href="">Midterm</a><br/>
-                    <a href="">Multiple Modules</a> | Not available yet
-                </li>
-                <li>
-                    <a href="">Final</a><br/>
-                    <a href="">Multiple Modules</a> | Not available yet
-                </li>
-            </ul>
+                <hr/>
+                <ul class="wd-flex-grow-1 list-group module-list">
+                    <li class="list-group-item list-group-item-secondary">
+                        <i class="fa fa-grip-vertical" style="margin-right: 5px"></i>
+                        <span><strong>Assignments</strong></span>
+                        <div class="float-end">
+                            <button
+                                    class="btn rounded-pill"
+                                    style="background: #eeeeee; margin-right: 20px"
+                            >
+                                40% of Total
+                            </button>
+                            <i class="fa-solid fa-plus" style="margin-right: 20px"></i>
+                            <i class="fa fa-ellipsis-v"></i>
+                        </div>
+                    </li>
+                    <ul class="list-group" style="border-radius: 0">
+                        <ul class="list-group" style="border-radius: 0">
+                            <li class="list-group-item">
+                                <i class="fa fa-grip-vertical" style="margin-right: 20px"></i>
+                                <i class="fa fa-book"></i>
+                                <h6 style="display: inline">
+                                    <strong
+                                    ><a
+                                            href="/Kanbas/Courses/Assignments/Edit/screen.html"
+                                            style="color: black"
+                                    >A1 - ENV + HTML
+                                    </a></strong
+                                    >
+                                </h6>
+                                <div class="float-end">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </div>
+                                <div style="margin-left: 70px; color: #686464; width: 600px">
+                                    <p style="font-size: 15px; margin-bottom: 1px">
+                                        Multiple Modules | Not available</p>
+                                </div>
 
 
-            <label><b>PROJECT 30% of Total</b></label>
-            <select>
-                <option selected>Edit</option>
-                <option>Speed Grader</option>
-                <option>Duplicate</option>
-                <option>Delete</option>
-                <option>Move To..</option>
-                <option>Send To..</option>
-                <option>Copy To..</option>
-                <option>Share to Commons</option>
-            </select>
-            <ul>
-                <li>
-                    <a href="">Project</a><br/>
-                    <a href="">Multiple Modules</a> | Not available yet
-                </li>
-            </ul>
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-grip-vertical" style="margin-right: 20px"></i>
+                                <i class="fa fa-book"></i>
+                                <h6 style="display: inline">
+                                    <strong
+                                    ><a
+                                            href="/Kanbas/Courses/Assignments/Edit/screen.html"
+                                            style="color: black"
+                                    >A2 - CSS + BOOTSTRAP
+                                    </a></strong
+                                    >
+                                </h6>
+                                <div class="float-end">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </div>
+                                <div style="margin-left: 70px; color: #686464; width: 600px">
+                                    <p style="font-size: 15px; margin-bottom: 1px">
+                                        Multiple Modules | Not available</p>
+                                </div>
+
+
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-grip-vertical" style="margin-right: 20px"></i>
+                                <i class="fa fa-book"></i>
+                                <h6 style="display: inline">
+                                    <strong
+                                    ><a
+                                            href="/Kanbas/Courses/Assignments/Edit/screen.html"
+                                            style="color: black"
+                                    >A3 - JS + REACT
+                                    </a></strong
+                                    >
+                                </h6>
+                                <div class="float-end">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </div>
+                                <div style="margin-left: 70px; color: #686464; width: 600px">
+                                    <p style="font-size: 15px; margin-bottom: 1px">
+                                        Multiple Modules | Not available</p>
+                                </div>
+
+
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-grip-vertical" style="margin-right: 20px"></i>
+                                <i class="fa fa-book"></i>
+                                <h6 style="display: inline">
+                                    <strong
+                                    ><a
+                                            href="/Kanbas/Courses/Assignments/Edit/screen.html"
+                                            style="color: black"
+                                    >A5 - NODE + SESSION
+                                    </a></strong
+                                    >
+                                </h6>
+                                <div class="float-end">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </div>
+                                <div style="margin-left: 70px; color: #686464; width: 600px">
+                                    <p style="font-size: 15px; margin-bottom: 1px">
+                                        Multiple Modules | Not available</p>
+                                </div>
+
+
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-grip-vertical" style="margin-right: 20px"></i>
+                                <i class="fa fa-book"></i>
+                                <h6 style="display: inline">
+                                    <strong
+                                    ><a
+                                            href="/Kanbas/Courses/Assignments/Edit/screen.html"
+                                            style="color: black"
+                                    >A6 - MONGO + MONGOOSE
+                                    </a></strong
+                                    >
+                                </h6>
+                                <div class="float-end">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </div>
+                                <div style="margin-left: 70px; color: #686464; width: 600px">
+                                    <p style="font-size: 15px; margin-bottom: 1px">
+                                        Multiple Modules | Not available</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </ul>
+                </ul>
+                <br />
+                <br />
+            </div>
         </div>
     </div>
+</div>
 </body>
 </html>
