@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import HelloWorld from "./Labs/a3/HelloWorld";
+import Kanbas from "./Kanbas";
+import Labs from "./Labs";
+import {HashRouter} from "react-router-dom";
+import {Routes, Route, Navigate} from 'react-router'
 
-class App extends Component {
-  render() {
+function App() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+        <HashRouter>
+            <div>
+                <Routes>
+                    <Route path="/" element={<Navigate to="/Labs" />} />
+                    <Route path="/hello" element={<HelloWorld />} />
+                    <Route path="/Labs/*" element={<Labs />} />
+                    <Route path="/Kanbas/*" element={<Kanbas />} />
+                </Routes>
+            </div>
+        </HashRouter>
     );
-  }
 }
-
 export default App;
