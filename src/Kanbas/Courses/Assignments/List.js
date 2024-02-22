@@ -38,7 +38,7 @@ function AssignmentList() {
 								&nbsp;&nbsp;&nbsp;
 								<h6 style={{ display: "inline" }}>
 									<strong>
-										<Link to={`/Kanbas/Courses/Assignments/${a._id}/Edit/`}
+										<Link to={`/Kanbas/Courses/${courseId}/Assignments/${a._id}`}
 											  style={{ color: "black" }}>
 											{`${a._id} - ${a.title}`}
 										</Link>
