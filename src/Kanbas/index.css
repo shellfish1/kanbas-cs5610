@@ -30,3 +30,10 @@
 .wd-logo{
     width: 70px;
 }
+.wd-flex-grow-1 {
+    flex-grow: 1;
+}
+.wd-flex-row-container {
+    display: flex;
+    flex-direction: row;
+}
