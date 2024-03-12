@@ -1,11 +1,10 @@
 import React from 'react'
-import '../../index.css'
+import '../../styles/index.scss'
 import {FaPlus} from "react-icons/fa";
 import {FaEllipsisVertical} from "react-icons/fa6";
 
 function AssignmentControls() {
 	return (
-		// TODO: Try removing the className from the top most div and add when combining all the components for module page.
 		<div className="wd-flex-row-container">
 			<div className="search wd-flex-grow-1">
 				<input

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../index.css";
+import "../../styles/index.scss";
 import { modules } from "../../Database";
 import {FaEllipsisV, FaCheckCircle, FaPlusCircle, FaGripVertical} from "react-icons/fa";
 import { useParams } from "react-router";
@@ -13,7 +13,7 @@ function ModuleList() {
 			{
 				modulesList.map(
 					(module, index) => (
-						<div style={{marginBottom: "15px"}}>
+						<div className="wd-column-element">
 							<li key={index}
 								className="list-group-item list-group-item-secondary"
 								onClick={() => setSelectedModule(module)}
@@ -44,7 +44,7 @@ function ModuleList() {
 														<div className="float-end">
 															<FaCheckCircle className="text-success"
 																		   style={{color: "rgb(3, 133, 3)"}}/>
-															<FaEllipsisV className="ms-2"/>
+															<FaEllipsisV className="wd-fa-body-logo"/>
 														</div>
 													</li>
 												)

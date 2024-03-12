@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../index.css";
+import "../../styles/index.scss";
 import { assignments } from "../../Database";
 import {FaEllipsisV, FaGripVertical, FaPlus, FaBook} from "react-icons/fa";
 import { useParams } from "react-router";

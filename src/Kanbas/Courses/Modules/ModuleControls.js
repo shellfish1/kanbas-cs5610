@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../index.css'
+import '../../styles/index.scss'
 import {FaCheckCircle, FaEllipsisV, FaPlus} from "react-icons/fa";
 import {FaEllipsisVertical} from "react-icons/fa6";
 

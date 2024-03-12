@@ -1,6 +1,6 @@
 import React from 'react';
 import KanbasNavigation from "./Navigation";
-import './index.css'
+import './styles/index.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 import {Navigate, Route, Routes} from "react-router";

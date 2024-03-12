@@ -1,7 +1,7 @@
 import { assignments, enrollments, grades, users } from "../../Database";
 import { useParams } from "react-router-dom";
 import {FaFileExport, FaFileImport} from "react-icons/fa";
-import "../../index.css";
+import "../../styles/index.scss";
 import React from 'react'
 function GradesTable() {
 	const { courseId } = useParams();

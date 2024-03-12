@@ -1,3 +1,15 @@
+@import "bootstrap";
+
+$wd-kanbas-red: rgb(233, 35, 41);
+$wd-kanbas-green: rgb(0, 128, 0);
+$wd-kanbas-black: rgb(0, 0, 0);
+$wd-kanbas-content-size: 1em;
+$wd-kanbas-logo-description-size: 0.8em;
+
+.wd-fa-body-logo {
+    @extend .m-2
+}
+
 .wd-kanbas-navigation {
     background-color: black;
     list-style: none;
@@ -9,21 +21,23 @@
     top: 0px;
 }
 .wd-kanbas-navigation li {
-    padding: 10px;     margin-bottom: 10px;
-    font-size: 0.8em;  text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 0.8em;
+    text-align: center;
 }
 .wd-kanbas-navigation li.wd-active {
     background-color: white;
 }
 .wd-kanbas-navigation li.wd-active a {
-    color: red;
+    color: $wd-kanbas-red;
 }
 .wd-kanbas-navigation a {
     color: white;
     text-decoration: none;
 }
 .wd-kanbas-navigation a i {
-    color: red;
+    color: $wd-kanbas-red;
     font-size: 2em;
     margin-bottom: 5px;
 }
@@ -47,7 +61,7 @@
 }
 
 .breadcrumb-item > a {
-    color: red;
+    color: $wd-kanbas-red;
 }
 .wd-side-navigation {
     background-color: white;
@@ -71,7 +85,7 @@
     color: black;
 }
 .wd-side-navigation a {
-    color: red;
+    color: $wd-kanbas-red;
     text-decoration: none;
 }
 .wd-rectangle-grey-button {
@@ -82,5 +96,12 @@
 .wd-rectangle-red-button {
     margin: 2px;
     min-height: 36px;
-    background: red
+    background: $wd-kanbas-red
+}
+.wd-column-element {
+    margin: 15px
+}
+
+.wd-row-element {
+
 }
