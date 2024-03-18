@@ -32,26 +32,43 @@ const assignmentsSlice = createSlice({
 	initialState,
 	reducers: {
 		addAssignment: (state, action) => {
-			state.assignments = [
-				{ ...action.payload, _id: new Date().getTime().toString() },
+			const newAssignment = { ...action.payload, _id: new Date().getTime().toString() }
+			const courseId = newAssignment.course
+
+			console.log(`courseId is ${courseId} newAssignment is ${JSON.stringify(newAssignment)}`)
+			state.assignments = {
 				...state.assignments,
-			];
+				[courseId] : [...state.assignments[courseId], newAssignment]
+			}
 		},
 		deleteAssignment: (state, action) => {
-			state.assignments = state.assignments.filter(
-				(a) => a._id !== action.payload
-			);
+			const cid = action.payload.course
+			const aid = action.payload._id
+			state.assignments = {
+				...state.assignments,
+				[cid] : [...state.assignments[cid].filter(
+					(a) => a._id !== aid
+				)]
+			}
 		},
 		updateAssignment: (state, action) => {
-			state.assignments = state.assignments.map((a) => {
-				if (a._id === action.payload._id) {
-					return action.payload;
-				} else {
-					return a;
-				}
-			});
+			const newAssignment = action.payload
+			const courseId = newAssignment.course
+			state.assignments = {
+				...state.assignments,
+				[courseId] : [ ...state.assignments[courseId].map((a) => {
+					if (a._id === action.payload._id) {
+						console.log("1WDSASFQACDVADVSDVSDV")
+						return newAssignment;
+					} else {
+						return a;
+					}
+				})]
+			}
+			console.log(JSON.stringify(state.assignments[courseId]))
 		},
 		setSelectedAssignment: (state, action) => {
+			console.log(JSON.stringify(action.payload))
 			state.selectedAssignment = action.payload
 		}
 	},

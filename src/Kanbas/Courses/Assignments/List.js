@@ -4,7 +4,7 @@ import {FaEllipsisV, FaGripVertical, FaPlus, FaBook} from "react-icons/fa";
 import {Link} from "react-router-dom";
 import {FaCircleCheck} from "react-icons/fa6";
 import { useSelector, useDispatch } from "react-redux";
-import {setSelectedAssignment} from "./reducers/assignmentsReducer";
+import {deleteAssignment, setSelectedAssignment} from "./reducers/assignmentsReducer";
 
 function AssignmentList({courseId}) {
 	const assignmentList = useSelector((state) =>
@@ -54,6 +54,15 @@ function AssignmentList({courseId}) {
 									</strong>
 								</h6>
 								<div className="float-end">
+									<button className="btn btn-danger mx-2"
+											data-cid={a.course}
+											data-aid={a._id}
+											onClick={ (ev) => {
+												const {aid, cid} = ev.target.dataset
+												dispatch(deleteAssignment({course: cid, _id: aid}))
+											} }>
+										Delete
+									</button>
 									<FaCircleCheck style={{ color: "green" }} />
 									<FaEllipsisV/>
 								</div>

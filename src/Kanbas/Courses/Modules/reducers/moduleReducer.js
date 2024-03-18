@@ -19,7 +19,7 @@ const modulesSlice = createSlice({
 		},
 		deleteModule: (state, action) => {
 			state.modules = state.modules.filter(
-				(module) => module._id !== action.payload
+				(module) => module._id !== action.payload._id
 			);
 		},
 		updateModule: (state, action) => {

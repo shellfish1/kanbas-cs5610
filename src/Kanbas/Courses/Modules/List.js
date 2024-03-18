@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/index.scss";
-import {FaEllipsisV, FaCheckCircle, FaPlusCircle, FaGripVertical, FaMinusCircle} from "react-icons/fa";
+import {FaEllipsisV, FaCheckCircle, FaGripVertical} from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import {
 	addModule,
@@ -19,7 +19,7 @@ function ModuleList({courseId}) {
 	return (
 		<>
 			<div className="card" style={{width: 600}}>
-				<form className="card-body">
+				<div className="card-body">
 					<h6 className="card-title">
 						Add Module
 					</h6>
@@ -28,7 +28,7 @@ function ModuleList({courseId}) {
 						<label htmlFor="addModuleName" className="col-2 col-form-label">Name</label>
 						<div className="col-10">
 							<input id="addModuleName" type="text" value={module.name} className="form-control"
-								   onChange={(e) => setModule({...module, name: e.target.value})}/>
+								   onChange={(e) => dispatch(setModule({...module, name: e.target.value}))}/>
 						</div>
 					</div>
 					<br/>
@@ -36,7 +36,7 @@ function ModuleList({courseId}) {
 						<label htmlFor="addModuleDescription" className="col-2 col-form-label">Desc</label>
 						<div className="col-10">
 							<input id="addModuleDescription" type="text" value={module.description} className="form-control"
-								   onChange={(e) => setModule({...module, description: e.target.value})}/>
+								   onChange={(e) => dispatch(setModule({...module, description: e.target.value}))}/>
 						</div>
 					</div>
 					<br/>
@@ -47,7 +47,7 @@ function ModuleList({courseId}) {
 					<button className="btn btn-secondary" onClick={() => dispatch(updateModule(module))}>
 						Update
 					</button>
-				</form>
+				</div>
 			</div>
 			<hr/>
 			<ul className="wd-flex-grow-1 list-group">
@@ -61,7 +61,7 @@ function ModuleList({courseId}) {
 									<div>
 										<li key={courseIndex}
 											className="list-group-item list-group-item-secondary"
-											onClick={() => dispatch(setSelected(courseModule))}
+											onClick={() => dispatch(setModule(courseModule))}
 										>
 											<div className="d-flex justify-content-between align-items-center">
 												<div className="d-flex align-items-center">
@@ -114,7 +114,6 @@ function ModuleList({courseId}) {
 		</>
 
 	)
-		;
 }
 
 export default ModuleList;

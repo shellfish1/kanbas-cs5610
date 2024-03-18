@@ -48,7 +48,7 @@ function AssignmentEditor() {
 					<label className="form-label">Assignment Name</label>
 					<input type="text" className="form-control"
 						   value={selectedAssignment.title}
-						   onChange={(e) => setSelectedAssignment({...selectedAssignment, title: e.target.value})}
+						   onChange={(e) => dispatch(setSelectedAssignment({...selectedAssignment, title: e.target.value, course: courseId}))}
 					/>
 				</div>
 				<div className="mb-3">
@@ -56,7 +56,7 @@ function AssignmentEditor() {
 					<input type="text-area"
 						   className="form-control"
 						   value={selectedAssignment.description}
-						   onChange={(e) => setSelectedAssignment({...selectedAssignment, description: e.target.value})}
+						   onChange={(e) => dispatch(setSelectedAssignment({...selectedAssignment, description: e.target.value, course: courseId}))}
 					/>
 				</div>
 				<div className="mb-3">
@@ -64,7 +64,7 @@ function AssignmentEditor() {
 					<input type="number"
 						   className="form-control"
 						   value={parseInt(selectedAssignment.maxScore)}
-						   onChange={(e) => setSelectedAssignment({...selectedAssignment, maxScore: parseInt(e.target.value)})}
+						   onChange={(e) => dispatch(setSelectedAssignment({...selectedAssignment, maxScore: parseInt(e.target.value), course: courseId}))}
 					/>
 				</div>
 				<div className="mb-3">
@@ -72,7 +72,7 @@ function AssignmentEditor() {
 					<input type="datetime-local"
 						   value={selectedAssignment.startDate}
 						   className="form-control"
-						   onChange={(e) => setSelectedAssignment({...selectedAssignment, startDate: e.target.value})}
+						   onChange={(e) => dispatch(setSelectedAssignment({...selectedAssignment, startDate: e.target.value, course: courseId}))}
 					/>
 				</div>
 				<div className="mb-3">
@@ -80,7 +80,7 @@ function AssignmentEditor() {
 					<input type="datetime-local"
 						   value={selectedAssignment.dueDate}
 						   className="form-control"
-						   onChange={(e) => setSelectedAssignment({...selectedAssignment, dueDate: e.target.value})}
+						   onChange={(e) => dispatch(setSelectedAssignment({...selectedAssignment, dueDate: e.target.value, course: courseId}))}
 					/>
 				</div>
 			</form>
@@ -102,12 +102,12 @@ function AssignmentEditor() {
 					&nbsp;
 					{showEdit ? (
 						<Link to={`/Kanbas/Courses/${courseId}/Assignments`}>
-							<button className="btn btn-secondary" onClick={() => updateAssignment(selectedAssignment)}>Update</button>
+							<button className="btn btn-secondary" onClick={() => dispatch(updateAssignment({...selectedAssignment, course: courseId}))}>Update</button>
 						</Link>
 					) : (
 						<Link to={`/Kanbas/Courses/${courseId}/Assignments`}>
 							<button className="btn btn-success"
-									onClick={() => addAssignment(selectedAssignment)}
+									onClick={() => dispatch(addAssignment({...selectedAssignment, course: courseId}))}
 							>
 								Add
 							</button>

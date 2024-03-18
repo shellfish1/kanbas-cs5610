@@ -3,8 +3,13 @@ import '../../styles/index.scss'
 import {FaPlus} from "react-icons/fa";
 import {FaEllipsisVertical} from "react-icons/fa6";
 import {Link} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {setSelectedAssignment} from "./reducers/assignmentsReducer";
 
 function AssignmentControls({courseId}) {
+	const selectedAssignment = useSelector((state) =>
+		state.assignmentsReducer.selectedAssignment)
+	const dispatch = useDispatch();
 	return (
 		<div className="wd-flex-row-container">
 			<div className="search wd-flex-grow-1">
@@ -19,7 +24,18 @@ function AssignmentControls({courseId}) {
 				<button className="btn wd-rectangle-grey-button" >
 					<FaPlus/>Group
 				</button>
-				<Link to={"New"} className="btn btn-danger">
+				<Link to={"New"} className="btn btn-danger"
+					onClick={() => {
+						dispatch(setSelectedAssignment({
+							title: null,
+							description: null,
+							course: courseId,
+							_id: null,
+							startDate: null,
+							dueDate: null,
+							maxScore: null
+						}))
+					}}>
 					<FaPlus/>Assignment
 				</Link>
 				<button className="btn wd-rectangle-grey-button" >
