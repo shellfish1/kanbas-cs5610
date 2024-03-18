@@ -6,3 +6,4 @@ import users from "./users.json"
 import grades from "./grades.json"
 
 export { modules, assignments, courses, enrollments, grades, users }
+export default { modules, assignments, courses, enrollments, grades, users }
