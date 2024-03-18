@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import "../../styles/index.scss";
-import { assignments } from "../../Database";
 import {FaEllipsisV, FaGripVertical, FaPlus, FaBook} from "react-icons/fa";
-import { useParams } from "react-router";
 import {Link} from "react-router-dom";
 import {FaCircleCheck} from "react-icons/fa6";
+import { useSelector, useDispatch } from "react-redux";
+import {setSelectedAssignment} from "./reducers/assignmentsReducer";
 
-function AssignmentList() {
-	const { courseId } = useParams();
-	const assignmentList = assignments.filter((a) => a.course === courseId);
+function AssignmentList({courseId}) {
+	const assignmentList = useSelector((state) =>
+		state.assignmentsReducer.assignments)[courseId];
+	const dispatch = useDispatch();
 
 	return (
 		<div>
@@ -32,14 +33,22 @@ function AssignmentList() {
 				{
 					assignmentList.map( a => {
 						return (
-							<li className="list-group-item">
+							<li className="list-group-item" key={a._id}>
 								<FaGripVertical style={{marginRight: "10px"}}/>
 								<FaBook style={{color: "green"}}/>
 								&nbsp;&nbsp;&nbsp;
 								<h6 style={{ display: "inline" }}>
 									<strong>
 										<Link to={`/Kanbas/Courses/${courseId}/Assignments/${a._id}`}
-											  style={{ color: "black" }}>
+											  data-cid={a.course}
+											  data-aid={a._id}
+											  style={{ color: "black" }}
+											  onClick={(ev)=> {
+												  const {aid, cid} = ev.target.dataset
+												  const assignment = assignmentList.filter((ass) => ass._id === aid)[0]
+												  dispatch(setSelectedAssignment(assignment))
+											  }}
+										>
 											{`${a._id} - ${a.title}`}
 										</Link>
 									</strong>

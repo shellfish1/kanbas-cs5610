@@ -1,12 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { modules } from "../../../Database";
-import {act} from "react-dom/test-utils";
-
 
 const initialState = {
 	modules: modules,
 	module: { name: "New Module 123", description: "New Description" },
-	selected: null
 };
 
 
@@ -35,15 +32,13 @@ const modulesSlice = createSlice({
 			});
 		},
 		setModule: (state, action) => {
+			console.log("SET MODULE BEING CALLED")
 			state.module = action.payload;
 		},
-		setSelected: (state, action) => {
-			state.selected = action.payload
-		}
 	},
 });
 
 
 export const { addModule, deleteModule,
-	updateModule, setModule, setSelected } = modulesSlice.actions;
+	updateModule, setModule } = modulesSlice.actions;
 export default modulesSlice.reducer;

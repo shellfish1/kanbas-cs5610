@@ -1,25 +1,39 @@
 import React from 'react';
 
-import { useNavigate, useParams, Link } from "react-router-dom";
-import { assignments } from "../../../Database";
+import {useNavigate, useParams, Link, useLocation} from "react-router-dom";
 import {FaCircleCheck, FaEllipsisVertical} from "react-icons/fa6";
+import {
+	addAssignment,
+	updateAssignment,
+	deleteAssignment,
+	setSelectedAssignment
+} from "../reducers/assignmentsReducer";
+import {useDispatch, useSelector} from "react-redux";
+
+
 function AssignmentEditor() {
-	const { assignmentId } = useParams();
-	const assignment = assignments.find(
-		(assignment) => assignment._id === assignmentId);
-	const { courseId } = useParams();
+	const selectedAssignment = useSelector((state) =>
+		state.assignmentsReducer.selectedAssignment)
+	const dispatch = useDispatch();
+	const { pathname } = useLocation();
+	const assignmentId = selectedAssignment._id
+	const courseId = selectedAssignment.course
 	const navigate = useNavigate();
+	const showEdit = !pathname.includes("/New")
+
 	const handleSave = () => {
 		console.log("Actually saving assignment TBD in later assignments");
 		navigate(`/Kanbas/Courses/${courseId}/Assignments`);
 	};
+
+
 	return (
-		<div className="wd-flex-grow-1" style={{ marginLeft: "30px",  marginRight: "30px"}}>
+		<div className="wd-flex-grow-1" style={{marginLeft: "30px", marginRight: "30px"}}>
 			<div className="wd-flex-row-container">
 				<div className="wd-flex-grow-1"></div>
 				<div className="d-flex float-end">
 					<div className="flex-grow-1"></div>
-					<p style={{ marginTop: "7px", "marginRight": "10px", color: "green" }}>
+					<p style={{marginTop: "7px", "marginRight": "10px", color: "green"}}>
 						<FaCircleCheck style={{marginRight: "3px"}}/>
 						Published
 					</p>
@@ -29,10 +43,48 @@ function AssignmentEditor() {
 				</div>
 			</div>
 			<hr/>
-			<div className="mb-3">
-				<label className="form-label">Assignment Name</label>
-				<input type="text" className="form-control" value={assignment.title}/>
-			</div>
+			<form>
+				<div className="mb-3">
+					<label className="form-label">Assignment Name</label>
+					<input type="text" className="form-control"
+						   value={selectedAssignment.title}
+						   onChange={(e) => setSelectedAssignment({...selectedAssignment, title: e.target.value})}
+					/>
+				</div>
+				<div className="mb-3">
+					<label className="form-label">Description</label>
+					<input type="text-area"
+						   className="form-control"
+						   value={selectedAssignment.description}
+						   onChange={(e) => setSelectedAssignment({...selectedAssignment, description: e.target.value})}
+					/>
+				</div>
+				<div className="mb-3">
+					<label className="form-label">Points</label>
+					<input type="number"
+						   className="form-control"
+						   value={parseInt(selectedAssignment.maxScore)}
+						   onChange={(e) => setSelectedAssignment({...selectedAssignment, maxScore: parseInt(e.target.value)})}
+					/>
+				</div>
+				<div className="mb-3">
+					<label className="form-label">Available From</label>
+					<input type="datetime-local"
+						   value={selectedAssignment.startDate}
+						   className="form-control"
+						   onChange={(e) => setSelectedAssignment({...selectedAssignment, startDate: e.target.value})}
+					/>
+				</div>
+				<div className="mb-3">
+					<label className="form-label">Available Till</label>
+					<input type="datetime-local"
+						   value={selectedAssignment.dueDate}
+						   className="form-control"
+						   onChange={(e) => setSelectedAssignment({...selectedAssignment, dueDate: e.target.value})}
+					/>
+				</div>
+			</form>
+
 			<br/>
 			<hr/>
 			<div className="wd-flex-row-container">
@@ -48,25 +100,24 @@ function AssignmentEditor() {
 						<button className="btn" style={{background: "#eeeeee"}}>Cancel</button>
 					</Link>
 					&nbsp;
-					<Link to={`/Kanbas/Courses/${courseId}/Assignments`}>
-						<button className="btn btn-danger">Save</button>
-					</Link>
+					{showEdit ? (
+						<Link to={`/Kanbas/Courses/${courseId}/Assignments`}>
+							<button className="btn btn-secondary" onClick={() => updateAssignment(selectedAssignment)}>Update</button>
+						</Link>
+					) : (
+						<Link to={`/Kanbas/Courses/${courseId}/Assignments`}>
+							<button className="btn btn-success"
+									onClick={() => addAssignment(selectedAssignment)}
+							>
+								Add
+							</button>
+						</Link>
+					)}
+
 				</div>
 			</div>
 			<br/>
 		</div>
-		// <div>
-		// 	<h2>Assignment Name</h2>
-		// 	<input value={assignment?.title}
-		// 		   className="form-control mb-2" />
-		// 	<button onClick={handleSave} className="btn btn-success ms-2 float-end">
-		// 		Save
-		// 	</button>
-		// 	<Link to={`/Kanbas/Courses/${courseId}/Assignments`}
-		// 		  className="btn btn-danger float-end">
-		// 		Cancel
-		// 	</Link>
-		// </div>
 	);
 }
 

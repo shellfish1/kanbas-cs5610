@@ -2,8 +2,9 @@ import React from 'react'
 import '../../styles/index.scss'
 import {FaPlus} from "react-icons/fa";
 import {FaEllipsisVertical} from "react-icons/fa6";
+import {Link} from "react-router-dom";
 
-function AssignmentControls() {
+function AssignmentControls({courseId}) {
 	return (
 		<div className="wd-flex-row-container">
 			<div className="search wd-flex-grow-1">
@@ -18,9 +19,9 @@ function AssignmentControls() {
 				<button className="btn wd-rectangle-grey-button" >
 					<FaPlus/>Group
 				</button>
-				<button className="btn btn-danger">
+				<Link to={"New"} className="btn btn-danger">
 					<FaPlus/>Assignment
-				</button>
+				</Link>
 				<button className="btn wd-rectangle-grey-button" >
 					<FaEllipsisVertical/>
 				</button>

@@ -70,7 +70,7 @@ function CoursesTopNavigation() {
 					{
 						isEditSection(pathname) && (
 							<li className="breadcrumb-item active" aria-current="page">
-								{findAssignment(pathname).title}
+								{findAssignment(pathname) != null ? findAssignment(pathname).title : "New"}
 							</li>
 						)
 					}
