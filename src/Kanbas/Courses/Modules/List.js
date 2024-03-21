@@ -82,28 +82,32 @@ function ModuleList({courseId}) {
 											</div>
 										</li>
 										{/*<br/>*/}
-										<ul className="list-group" style={{borderRadius: "0px"}}>
-											{
-												courseModule.lessons.map(
-													(lesson, lessonIndex) => {
-														console.log(`Index is ${lessonIndex} lesson is ${lesson.name}`)
-														return (
-															<li className="list-group-item" key={lessonIndex}>
-																<FaEllipsisV className="me-2"/>
-																<h6 style={{display: "inline"}}>
-																	{lesson.name}
-																</h6>
-																<div className="float-end">
-																	<FaCheckCircle className="text-success"
-																				   style={{color: "rgb(3, 133, 3)"}}/>
-																	<FaEllipsisV className="wd-fa-body-logo"/>
-																</div>
-															</li>
+										{
+											(courseModule?.lessons != null) && (
+												<ul className="list-group" style={{borderRadius: "0px"}}>
+													{
+														courseModule.lessons.map(
+															(lesson, lessonIndex) => {
+																console.log(`Index is ${lessonIndex} lesson is ${lesson.name}`)
+																return (
+																	<li className="list-group-item" key={lessonIndex}>
+																		<FaEllipsisV className="me-2"/>
+																		<h6 style={{display: "inline"}}>
+																			{lesson.name}
+																		</h6>
+																		<div className="float-end">
+																			<FaCheckCircle className="text-success"
+																						   style={{color: "rgb(3, 133, 3)"}}/>
+																			<FaEllipsisV className="wd-fa-body-logo"/>
+																		</div>
+																	</li>
+																)
+															}
 														)
 													}
-												)
-											}
-										</ul>
+												</ul>
+											)
+										}
 										<br/>
 									</div>
 								)

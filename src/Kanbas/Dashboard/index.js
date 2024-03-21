@@ -2,7 +2,9 @@ import React,  { useState } from "react";
 import { Link } from "react-router-dom";
 import db from "../Database";
 
-function Dashboard() {
+function Dashboard({ courses, course, setCourse, addNewCourse,
+                       deleteCourse, updateCourse }) {
+/*
     const [courses, setCourses] = useState(db.courses);
     const [course, setCourse] = useState({
         _id: "0",
@@ -32,6 +34,7 @@ function Dashboard() {
             })
         );
     };
+*/
 
 
     return (

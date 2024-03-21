@@ -9,7 +9,7 @@ import AssignmentEditor from "./Assignments/Edit/AssignmentEditor";
 import GradesTable from "./Grades/GradesTable";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-function Courses() {
+function Courses({courses}) {
 	return(
 		<div className="wd-flex-grow-1">
 			{/*<div className="d-none d-sm-flex">*/}
