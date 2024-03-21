@@ -15,7 +15,7 @@ function Courses({courses}) {
 			{/*<div className="d-none d-sm-flex">*/}
 
 			{/*</div>*/}
-			<CoursesTopNavigation className="d-none d-md-block"/>
+			<CoursesTopNavigation courses={courses} className="d-none d-md-block"/>
 			<hr/>
 			<div className="wd-flex-row-container">
 				<div className="d-none d-lg-block">

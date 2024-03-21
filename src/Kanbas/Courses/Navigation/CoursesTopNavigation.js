@@ -1,10 +1,10 @@
-import {assignments, courses} from "../../Database";
+import {assignments} from "../../Database";
 import {Link, useLocation, useParams} from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
 import React from "react";
 import {FaGlasses} from "react-icons/fa";
 
-function CoursesTopNavigation() {
+function CoursesTopNavigation({courses}) {
 	const { courseId } = useParams();
 	const { pathname } = useLocation();
 	const course = courses.find((course) => course._id === courseId);
