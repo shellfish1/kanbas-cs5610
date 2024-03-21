@@ -36,10 +36,18 @@ const assignmentsSlice = createSlice({
 			const courseId = newAssignment.course
 
 			console.log(`courseId is ${courseId} newAssignment is ${JSON.stringify(newAssignment)}`)
-			state.assignments = {
-				...state.assignments,
-				[courseId] : [...state.assignments[courseId], newAssignment]
+			if( courseId in state.assignments){
+				state.assignments = {
+					...state.assignments,
+					[courseId] : [...state.assignments[courseId], newAssignment]
+				}
+			}else{
+				state.assignments = {
+					...state.assignments,
+					[courseId] : [newAssignment]
+				}
 			}
+
 		},
 		deleteAssignment: (state, action) => {
 			const cid = action.payload.course

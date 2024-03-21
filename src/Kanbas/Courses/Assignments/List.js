@@ -7,8 +7,9 @@ import { useSelector, useDispatch } from "react-redux";
 import {deleteAssignment, setSelectedAssignment} from "./reducers/assignmentsReducer";
 
 function AssignmentList({courseId}) {
-	const assignmentList = useSelector((state) =>
-		state.assignmentsReducer.assignments)[courseId];
+	const allAssignmentMap = useSelector((state) =>
+		state.assignmentsReducer.assignments)
+	const assignmentList = courseId in allAssignmentMap? allAssignmentMap[courseId] : [] ;
 	const dispatch = useDispatch();
 
 	return (
